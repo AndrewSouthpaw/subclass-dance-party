@@ -39,7 +39,6 @@ $(document).ready(function(){
           50
         );
         groupies++;
-        console.log(groupies)
         $('body').append(dancer.$node);
       }
     }, 2000);

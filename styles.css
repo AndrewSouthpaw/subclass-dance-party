@@ -40,7 +40,6 @@ body, a:link, a:visited, a:active{
   width: 75px;
   height: 75px;
   position: absolute;
-  background-image: url('img/shyperson.jpeg');
   background-size: 100% 100%;
 }
 .groupieDancer{
@@ -48,7 +47,6 @@ body, a:link, a:visited, a:active{
   width: 60px;
   height: 60px;
   position: absolute;
-  background-image: url('img/groupie.gif');
   background-size: 100% 100%;
   z-index: 10;
 }
