@@ -24,3 +24,9 @@ BlinkyDancer.prototype.step = function() {
   // other effects you can use on a jQuery-wrapped html tag.
   this.$node.toggle();
 };
+BlinkyDancer.prototype.lineUp = function() {
+  var top = $('body').height() * Math.random();
+  var left = $('body').width() - 20;
+  this.$node.animate({top: top, left: left + 'px'}, 
+                     {duration: FLOOR_ANIMATION_DURATION});
+};

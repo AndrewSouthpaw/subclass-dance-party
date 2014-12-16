@@ -17,6 +17,11 @@ TechnicolorDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
 
   var color = colors[Math.floor(Math.random() * colors.length)];
-  this.$node.css('border', '10px solid ' + color);
+  this.$node.css('border', '30px solid ' + color);
 };
-
+TechnicolorDancer.prototype.lineUp = function() {
+  var top = $('body').height() * Math.random();
+  var left = $('body').width() - 20;
+  this.$node.animate({top: top, left: left + 'px'}, 
+                     {duration: FLOOR_ANIMATION_DURATION});
+};
