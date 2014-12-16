@@ -16,7 +16,7 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
-.lineUpDancersButton, .dancersGetDownButton{
+.lineUpDancersButton, .dancersGetDownButton, .changeBackgroundButton{
   padding:5px 12px;
   float:left;
 }
