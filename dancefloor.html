@@ -28,10 +28,10 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="ShyDancer">shy dancer</a>    
       <a href="#" class="lineUpDancersButton">Dancers line up!</a>    
       <a href="#" class="dancersGetDownButton">Dancers get down!</a> 
-      <!-- <a href="#" class="changeBackgroundButton">New dancefloor</a>    -->
+      <a href="#" class="customImageDancerButton">Add your own</a> 
     </div>
     <input id='fileUploader' type='file' accept="image/*" style="display:none"
-      onchange="handleFiles(this.files)">
+      onchange="customDancerFileHandler(this.files)"></input>
     <script src="src/init.js"></script>
 
   </body>
