@@ -1,10 +1,11 @@
 
 
-var CustomImageDancer = function(top, left, timeBetweenSteps) {
+var CustomImageDancer = function(top, left, timeBetweenSteps, url) {
   var self = this instanceof CustomImageDancer 
   ? this 
   : Object.create(CustomImageDancer.prototype);
 
+  self._imageURL = url;
   ImageDancer.call(self, top, left, timeBetweenSteps);
   self.$node.addClass('customImageDancer');
 

@@ -1,28 +1,45 @@
 
-var fileToUpload = $('#fileUploader').files;
 
-var onDrop = function(e) {
-  filesToUpload = e.dataTransfer.files;
-};
 
-var handleFiles = function(files) {
-  var file = files[0];
-  var image = $('img');
+
+
+/* customDancerFileHandler
+ * ====================
+ * Handles the file upload and creation of a custom image dancer.
+ */
+
+var customDancerFileHandler = function(files) {
   var reader = new FileReader();
-  image.width = 200;
-  image.height = 200;
   reader.onload = function(e) {
-    image.attr('src', e.target.result)
+    var dancer = new CustomImageDancer(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000,
+      e.target.result
+    );
+    dancers.push(dancer);
+    $('body').append(dancer.$node);
   };
 
-  reader.readAsDataURL(file);
+  reader.readAsDataURL(files[0]);
 
+};
+
+var customDancerCreator = function(files) {
+  var url;
+  handleFiles(files[0])
+  .then(function(value) {
+    console.log(value);
+  });
+  return;
+  
 };
 
 $('document').ready(function() {
-  $('#fileSelect').on('click', function(e) {
+  $('.customImageDancerButton').on('click', function(e) {
     e.preventDefault();
     $('#fileUploader').click();
+
   });
   // $('#dropzone').on('dragenter', function(e) {
   //   e.preventDefault();
