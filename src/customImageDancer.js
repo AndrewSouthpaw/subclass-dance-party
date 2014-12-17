@@ -1,5 +1,8 @@
 
-
+/* CustomImageDancer
+ * ====================
+ * Dancer where user specifies image, done through uploading an image.
+ */
 var CustomImageDancer = function(top, left, timeBetweenSteps, url) {
   var self = this instanceof CustomImageDancer 
   ? this 

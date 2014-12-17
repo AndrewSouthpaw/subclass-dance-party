@@ -1,4 +1,8 @@
-
+/* GroupieDancer
+ * ====================
+ * An image dancer that moves towards other dancers. 
+ * Also, it has shifty eyes. ¬_¬
+ */
 
 var GroupieDancer = function(top, left, timeBetweenSteps) {
   var self = this instanceof GroupieDancer 

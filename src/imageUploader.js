@@ -25,16 +25,11 @@ var customDancerFileHandler = function(files) {
 
 };
 
-var customDancerCreator = function(files) {
-  var url;
-  handleFiles(files[0])
-  .then(function(value) {
-    console.log(value);
-  });
-  return;
-  
-};
-
+/* DOM ready
+ * ====================
+ * Sets click handler on button, will trigger a click on the hidden input file
+ * uploader.
+ */
 $('document').ready(function() {
   $('.customImageDancerButton').on('click', function(e) {
     e.preventDefault();

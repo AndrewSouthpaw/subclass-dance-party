@@ -14,16 +14,22 @@ var ImageDancer = function(top, left, timeBetweenSteps) {
   // Dancer .$node is a span, so recreate as an image
   self.$node = $('<img class="imageDancer"></img>');
   self.$node.css('background-image', 'url("' + self._imageURL + '")');
+  Dancer.prototype.setRandomLocation.call(self);
 
+  // Properties that govern dancing behavior
   self._direction = -1;  // 1 for down, -1 for up
   self._steps = 0;
 
-  Dancer.prototype.setRandomLocation.call(self);
   return self;
 };
-
 ImageDancer.prototype = Object.create(Dancer.prototype);
 ImageDancer.prototype.constructor = ImageDancer;
+
+/* step
+ * ====================
+ * Moves dancer incrementally up or down, based upon direction. After a set
+ * number of steps, the direction switches.
+ */
 ImageDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   if (this._steps++ > 10) {
@@ -32,10 +38,3 @@ ImageDancer.prototype.step = function() {
   }
   this.$node.css('top', '+=' + this._direction + 'px');
 };
-ImageDancer.prototype.lineUp = function() {
-  var top = $('body').height() - this.$node.width();
-  var left = $('body').width() * Math.random();
-  this.$node.animate({top: top, left: left + 'px'}, 
-                     {duration: FLOOR_ANIMATION_DURATION});
-};
-

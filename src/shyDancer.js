@@ -1,5 +1,8 @@
 
-
+/* ShyDancer
+ * ====================
+ * Image dancer that moves to a new spot on the floor when moused over.
+ */
 var ShyDancer = function(top, left, timeBetweenSteps) {
   var self = this instanceof ShyDancer 
   ? this 

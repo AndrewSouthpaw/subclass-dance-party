@@ -1,29 +1,32 @@
 
+/* BlinkyDancer
+ * ====================
+ * A dancer that appears and disappears.
+ */
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   var self = this instanceof BlinkyDancer 
   ? this 
   : Object.create(BlinkyDancer.prototype);
 
   Dancer.call(self, top, left, timeBetweenSteps);
-  // we plan to overwrite the step function below, but we still want the 
-  // superclass step behavior to work,
-  // so we must keep a copy of the old version of this function
-
   return self;
 };
-
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
-BlinkyDancer.prototype.step = function() {
-  // call the old version of step at the beginning of any call to this 
-  // new version of step
-  Dancer.prototype.step.call(this);
 
-  // toggle() is a jQuery method to show/hide the <span> tag.
-  // See http://api.jquery.com/category/effects/ for this and
-  // other effects you can use on a jQuery-wrapped html tag.
+/* step
+ * ====================
+ * Toggles the visibility of dancer on/off.
+ */
+BlinkyDancer.prototype.step = function() {
+  Dancer.prototype.step.call(this);
   this.$node.toggle();
 };
+
+/* lineUp
+ * ====================
+ * Moves dancer to the right side of dance floor
+ */
 BlinkyDancer.prototype.lineUp = function() {
   var top = $('body').height() * Math.random();
   var left = $('body').width() - 20;

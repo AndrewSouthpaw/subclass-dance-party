@@ -29,10 +29,19 @@ Dancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
+/* getDownDancers
+ * ====================
+ * Issues a command to all dancers to getDown.
+ */
 Dancer.prototype.getDownDancers = function() {
   this.getDown();
 };
 
+/* getDown
+ * ====================
+ * Default behavior for dancers. Picks a random location on the dance floor
+ * and sets an animation to traverse the path to that location.
+ */
 Dancer.prototype.getDown = function() {
   // Makes all dancers get down and boogie!
   var top = $('body').height() * Math.random();
@@ -44,16 +53,40 @@ Dancer.prototype.getDown = function() {
   //     $("body").width() * Math.random(),
 };
 
+/* lineUpDancers
+ * ====================
+ * Issues a command to all dancers to line up.
+ */
 Dancer.prototype.lineUpDancers = function() {
   this.lineUp();
 };
 
+/* lineUp
+ * ====================
+ * Default behavior for dancers. Picks a random location on the bottom side
+ * of the dance floor and sets animation to traverse path to that location.
+ */
+Dancer.prototype.lineUp = function() {
+  var top = $('body').height() - this.$node.width();
+  var left = $('body').width() * Math.random();
+  this.$node.animate({top: top, left: left + 'px'}, 
+                     {duration: FLOOR_ANIMATION_DURATION});
+};
+
+/* setRandomLocation
+ * ====================
+ * Sets location of dancer to a random spot on the floor.
+ */
 Dancer.prototype.setRandomLocation = function() {
   var top = $('body').height() * Math.random();
   var left = $('body').width() * Math.random();
   this.$node.css({top: top, left: left});
 };
 
+/* animateRandomLocation
+ * ====================
+ * Animates the movement of dancer to a new random spot on the floor.
+ */
 Dancer.prototype.animateRandomLocation = function() {
   var top = $('body').height() * Math.random();
   var left = $('body').width() * Math.random();
@@ -61,6 +94,10 @@ Dancer.prototype.animateRandomLocation = function() {
                      {duration: FLOOR_ANIMATION_DURATION});
 };
 
+/* getClosestDancer
+ * ====================
+ * Returns the dancer closest to this one.
+ */
 Dancer.prototype.getClosestDancer = function() {
   var closestDancer
     , shortestDistance
