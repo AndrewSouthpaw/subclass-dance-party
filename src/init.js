@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  window.dancers = [];
-  var groupies = 0;  // Groupies are spawned as more dancers join the floor.
+  window.dancers = [];  // Collection of dancers
+  window.groupies = 0;  // Collection of groupies
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -26,24 +26,19 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 500
     );
     dancers.push(dancer);
     $('body').append(dancer.$node);
 
-    setInterval(function() {
-      if (dancers.length / (1 + groupies) > 5) {
-        var dancer = new GroupieDancer(
-          $("body").height() * Math.random(),
-          $("body").width() * Math.random(),
-          50
-        );
-        groupies++;
-        $('body').append(dancer.$node);
-      }
-    }, 2000);
+    
   });
 
+
+  /* Line up dancers & dancers get down buttons
+   * ====================
+   * Button handlers to tell dancers to line up or get down.
+   */
   $('.lineUpDancersButton').on('click', function(e) {
     dancers.forEach(Dancer.prototype.lineUpDancers.call
                     .bind(Dancer.prototype.lineUpDancers));
