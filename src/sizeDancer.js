@@ -1,11 +1,15 @@
 
+/* SizeDancer
+ * ====================
+ * Superclass for dancers that change size on each step.
+ */
 
 var SizeDancer = function(top, left, timeBetweenSteps) {
   var self = this instanceof SizeDancer 
   ? this 
   : Object.create(SizeDancer.prototype);
 
-  timeBetweenSteps = Math.random() * 100 + 15
+  timeBetweenSteps = Math.random() * 100 + 15;
   Dancer.call(self, top, left, timeBetweenSteps);
   self.size = 10;
   self._sizeReset = 10;

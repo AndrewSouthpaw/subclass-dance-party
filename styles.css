@@ -16,7 +16,7 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
-.lineUpDancersButton, .dancersGetDownButton{
+.lineUpDancersButton, .dancersGetDownButton, .customImageDancerButton{
   padding:5px 12px;
   float:left;
 }
@@ -35,12 +35,11 @@ body, a:link, a:visited, a:active{
   border-radius: 60px;
   position:absolute;
 }
-.shyDancer{
-  border-radius: 75px;
-  width: 75px;
-  height: 75px;
+.imageDancer{
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
   position: absolute;
-  background-image: url('img/shyperson.jpeg');
   background-size: 100% 100%;
 }
 .groupieDancer{
@@ -48,7 +47,6 @@ body, a:link, a:visited, a:active{
   width: 60px;
   height: 60px;
   position: absolute;
-  background-image: url('img/groupie.gif');
   background-size: 100% 100%;
   z-index: 10;
 }

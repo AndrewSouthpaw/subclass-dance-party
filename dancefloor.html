@@ -12,8 +12,11 @@
     <script src="src/sizeDancer.js"></script>
     <script src="src/growingDancer.js"></script>
     <script src="src/shrinkingDancer.js"></script>
+    <script src="src/imageDancer.js"></script>
+    <script src="src/customImageDancer.js"></script>
     <script src="src/shyDancer.js"></script>
     <script src="src/groupieDancer.js"></script>
+    <script src="src/imageUploader.js"></script>
   </head>
   <body>
     <div class="topbar">
@@ -24,8 +27,12 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="ShrinkingDancer">shrinking dancer</a>    
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="ShyDancer">shy dancer</a>    
       <a href="#" class="lineUpDancersButton">Dancers line up!</a>    
-      <a href="#" class="dancersGetDownButton">Dancers get down!</a>    
+      <a href="#" class="dancersGetDownButton">Dancers get down!</a> 
+      <a href="#" class="customImageDancerButton">Add your own</a> 
     </div>
+    <input id='fileUploader' type='file' accept="image/*" style="display:none"
+      onchange="customDancerFileHandler(this.files)"></input>
     <script src="src/init.js"></script>
+
   </body>
 </html>
